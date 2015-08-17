@@ -23,7 +23,7 @@ Simply add a dependency on silkyland/sawasdee to your project's composer.json fi
 ```
 Or you can use command-line to add silkyland\sawasdee package too by use this command.
 ```bash
-php composer.phar require "silkyland/sawasdee=1.*"
+composer require silkyland/sawasdee
 ```
 #####Via Download
 Download zip file and exact to any folder you need in your project.

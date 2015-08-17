@@ -1,0 +1,23 @@
+{
+  "name": "silkyland/Sawasdee",
+  "description": "Sawasdee, a miscellaneous tools for Thai language",
+  "license": "MIT",
+  "keywords": [
+    "sawasdee"
+  ],
+  "authors": [
+    {
+      "name": "Bundit Nuntates",
+      "email": "silkyland@gmail.com"
+    }
+  ],
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "4.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Silkyland\\Sawasdee\\": "src"
+    }
+  }
+}

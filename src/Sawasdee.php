@@ -63,7 +63,7 @@ class Sawasdee
     {
         $exploded = explode('.', $currency);
         if (count($exploded) > 1 and $exploded[1] != 0) {
-            $txt = SELF::readThaiNumber($exploded[0]) . 'บาท' . readThaiNumber($exploded[1]) . 'สตางค์';
+            $txt = SELF::readThaiNumber($exploded[0]) . 'บาท' . SELF::readThaiNumber($exploded[1]) . 'สตางค์';
         } else {
             $txt = SELF::readThaiNumber($exploded[0]) . 'บาทถ้วน';
         }
@@ -81,9 +81,9 @@ class Sawasdee
         $exploded = explode('.', $unit);
         print_r($number);
         if (count($exploded) > 1) {
-            $txt = readThaiNumber($exploded[0]) . 'จุด' . str_replace($number, $number_count_thai, $exploded[1]);
+            $txt = SELF::readThaiNumber($exploded[0]) . 'จุด' . str_replace($number, $number_count_thai, $exploded[1]);
         } else {
-            $txt = readThaiNumber($unit);
+            $txt = SELF::readThaiNumber($unit);
         }
         return $txt;
     }
@@ -94,28 +94,32 @@ class Sawasdee
      */
     public static function readThaiNumber($number)
     {
-        $number_group = array_map('strrev', array_reverse(str_split(strrev("$number"), 6)));
-        $position_thai = ['', 'สิบ', 'ร้อย', 'พัน', 'หมื่น', 'แสน', 'ล้าน'];
-        $number_count_thai = ["", "หนึ่ง", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า"];
-        $txt = "";
-        for ($i = 0; $i < count($number_group); $i++) {
-            $data = str_split($number_group[$i]);
-            $find = strlen($number_group[$i]);
-            for ($len = 0; $len < strlen($number_group[$i]); $len++) {
-                if (($find - 1) == 1 and $data[$len] == 2) {
-                    $txt .= 'ยี่' . $position_thai[$find - 1];
-                } elseif (($find - 1) == 1 and $data[$len] == 1) {
-                    $txt .= $position_thai[$find - 1];
-                } elseif (($find - 1) == 0 and ($data[$len] == 1) and strlen($number_group[$i]) > 1 and $data[$len - 1] != 0) {
-                    $txt .= 'เอ็ด' . $position_thai[$find - 1];
-                } else {
-                    $txt .= $data[$len] == 0 ? $number_count_thai[$data[$len]] : $number_count_thai[$data[$len]] . $position_thai[$find - 1];
+        if ($number == 0) {
+            return "ศูนย์";
+        } else {
+            $number_group = array_map('strrev', array_reverse(str_split(strrev("$number"), 6)));
+            $position_thai = ['', 'สิบ', 'ร้อย', 'พัน', 'หมื่น', 'แสน', 'ล้าน'];
+            $number_count_thai = ["", "หนึ่ง", "สอง", "สาม", "สี่", "ห้า", "หก", "เจ็ด", "แปด", "เก้า"];
+            $txt = "";
+            for ($i = 0; $i < count($number_group); $i++) {
+                $data = str_split($number_group[$i]);
+                $find = strlen($number_group[$i]);
+                for ($len = 0; $len < strlen($number_group[$i]); $len++) {
+                    if (($find - 1) == 1 and $data[$len] == 2) {
+                        $txt .= 'ยี่' . $position_thai[$find - 1];
+                    } elseif (($find - 1) == 1 and $data[$len] == 1) {
+                        $txt .= $position_thai[$find - 1];
+                    } elseif (($find - 1) == 0 and ($data[$len] == 1) and strlen($number_group[$i]) > 1 and $data[$len - 1] != 0) {
+                        $txt .= 'เอ็ด' . $position_thai[$find - 1];
+                    } else {
+                        $txt .= $data[$len] == 0 ? $number_count_thai[$data[$len]] : $number_count_thai[$data[$len]] . $position_thai[$find - 1];
+                    }
+                    $find--;
                 }
-                $find--;
+                $txt .= $i + 1 != count($number_group) ? 'ล้าน' : '';
             }
-            $txt .= $i + 1 != count($number_group) ? 'ล้าน' : '';
+            return $txt;
         }
-        return $txt;
     }
 
     /**

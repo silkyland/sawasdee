@@ -1,5 +1,5 @@
 # Sawasdee 
-Sawasdee, A miscellaneous library for number, words translator to Thai reading style. It is a PHP library that created for people who need to translate numbers to Thai reading style. It's including with Thai currency, Date and Time, Thai Unit and also included Thai SEO URL. Sawasdee comes with easy to use PHP style and powerful with documentation. You will love to use it permanently.
+Sawasdee, A miscellaneous library for number, words translator to Thai reading style including with Thai currency, date and time, Thai unit and also included Thai SEO URL. Sawasdee comes with easy to use PHP style and powerful with documentation.
 
 ##What's Sawasdee can do?
 Sawasdee can translate number to Thai words reading style comes with:

@@ -39,7 +39,7 @@ Basic using it will product default format like "date|month|buddhist year| |hour
 echo $sawasdee->toThaiDateTime('08/17/2015 09:50');  
 // 17สิงหาคม2558 9นาฬิกา50นาที00วินาที
 ```
-You can use format to use custom format by using :   %d (date), %m (month), %y (year), %h (hour), %i (minute), %s (second).
+You can custom format with these words :  %d (date), %m (month), %y (year), %h (hour), %i (minute), %s (second).
 ```php
 echo $sawasdee->toThaiDateTime('08/17/2015 09:50', '%d %m %y');
 // 17 สิงหาคม 2558
@@ -57,7 +57,7 @@ echo $sawasdee->toThaiDateTime('08/17/2015 09:50', 'ทุกๆวันที�
 echo $sawasdee->toThaiDateTime('08/17/2015 09:50', false);
 // 17สิงหาคม2558 9นาฬิกา50นาที00วินาที
 ```
-By defult short term of Thai month is turn to "false" that mean it will appear month name in full term. If you need a short term you need to use "true" in third parameter like this :
+By default short term of Thai month is turn to "false" that mean it will appear month name in full term. If you need a short term you need to use "true" in third parameter like this :
 ```php
 echo $sawasdee->toThaiDateTime('08/17/2015 09:50', '%d %m %y', true);
 // 17 ส.ค. 2558
@@ -67,7 +67,7 @@ If you need Thai alphabet numberic for output number just use "true" in the 4th 
 echo $sawasdee->toThaiDateTime('08/17/2015 09:50', '%d %m %y', true, true);
 // ๑๗ ส.ค. ๒๕๕๘
 ```
-Becuase Thailand use buddhist year and Sawasdee turn to buddhist year by default, If you need to change, you can also use "false" for AD (Anno Domini) format :
+Because Thailand use buddhist year and Sawasdee turn to buddhist year by default, If you need to change, you can also use "false" for AD (Anno Domini) format :
 ```php
 echo $sawasdee->toThaiDateTime('08/17/2015 09:50', '%d %m %y', true, false, false);
 // 17 ส.ค. 2015
@@ -90,7 +90,7 @@ echo $sawasdee->readThaiCurrency(125.25);
 ```
 ---
 #####Thai unit reading style
-In Thai language unit reading such as metre, kilometre, gram, kilogram, celcuis etc. Are read different from Thai currency in decimal point. "readThaiUnit()" function is useful to read unit in Thai style.
+In Thai language unit reading such as metre, kilometre, gram, kilogram, celsius etc. Are read different from Thai currency in decimal point. "readThaiUnit()" function is useful to read unit in Thai style.
 ```php
 echo $sawasdee->readThaiUnit(0);
 // ศูนย์

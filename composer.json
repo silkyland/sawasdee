@@ -5,12 +5,10 @@
   "keywords": [
     "sawasdee"
   ],
-  "authors": [
-    {
-      "name": "Bundit Nuntates",
-      "email": "silkyland@gmail.com"
-    }
-  ],
+  "authors": [{
+    "name": "Bundit Nuntates",
+    "email": "silkyland@gmail.com"
+  }],
   "require": {
     "php": ">=5.4"
   },
@@ -19,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Silkyland\\Sawasdee\\": "src"
+      "Silkyland\\": "src"
     }
   }
 }

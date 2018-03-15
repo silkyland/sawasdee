@@ -12,7 +12,8 @@
  * @link       http://devded.com, https://github.com/silkyland
  * @since      0.1
  */
-namespace Silkyland\Sawasdee;
+namespace Silkyland;
+
 /**
  * Class Sawasdee
  * @package Silkyland\Sawasdee
@@ -32,7 +33,6 @@ class Sawasdee
      */
     public static function toThaiDateTime($date_input, $format = false, $short_month = false, $thai_numberic = false, $buddhist_year = true)
     {
-
         $year = date('Y', strtotime($date_input));
         $month = date('n', strtotime($date_input));
         $date = date('j', strtotime($date_input));

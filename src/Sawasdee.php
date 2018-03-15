@@ -8,7 +8,7 @@
  *
  * @copyright  2015 Bundit Nuntates
  * @license    http://www.opensource.org/licenses/mit-license.php   MIT license
- * @version    Release: 0.1
+ * @version    Release: 1.1
  * @link       http://devded.com, https://github.com/silkyland
  * @since      0.1
  */

@@ -1,18 +1,18 @@
 # Sawasdee 
 Sawasdee, A miscellaneous library for number, words translator to Thai reading style including with Thai currency, date and time, Thai unit and also included Thai SEO URL. Sawasdee comes with easy to use PHP style and powerful with documentation.
 
-##What's Sawasdee can do?
+## What's Sawasdee can do?
 Sawasdee can translate number to Thai words reading style comes with:
 * Translate DateTime to Thai DateTime e.g. "08/16/2015" convert to "16 สิงหาคม 2515" or "๑๖ สิงหาคม ๒๕๕๘" or any format you need
 * Translate Thai currency e.g. "121.25" convert to "หนึ่งร้อยยี่สิบเอ็ดบาทยี่สิบห้าสตางค์" or input "215" will convert to "สองร้อยสิบห้าบาทถ้วน"
 * Translate Thai Unit e.g. "999.99" convert to "เก้าร้อยเก้าสิบเก้าจุดเก้าเก้า"
 * Convert word to url style e.g. "Boostrap ครองแชมป์ css framework ที่ดีที่สุด 100%" to "Boostrap-ครองแชมป์-css-framwork-ที่ดีที่สุด-100-เปอร์เซนต์"
 
-##Require
+## Require
 * PHP Version 5.4 or above
 
-##Installation
-#####Via composer
+## Installation
+##### Via composer
 Simply add a dependency on silkyland/sawasdee to your project's composer.json file if you use Composer to manage dependencies of your project. You can add code below to your composer.json file.
 ```json
 {

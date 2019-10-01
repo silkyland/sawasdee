@@ -52,7 +52,10 @@ class Sawasdee
         $letters = ['%d', '%m', '%y', '%h', '%i', '%s'];
         $words = [$date, $month_type, $year, $hour, $minute, $second];
         $result = str_replace($letters, $words, $format);
-        return $thai_numberic == true ? str_replace($numberic_in_arabic, $numberic_in_thai, $result) : $result;
+        
+        return $thai_numberic == true 
+            ? str_replace($numberic_in_arabic, $numberic_in_thai, $result) 
+            : $result;
     }
 
     /**
